@@ -1,0 +1,90 @@
+﻿@model KuasRepair.Models.Repair
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Repair</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Cause)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Cause)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Object)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Object)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Finishdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Finishdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Way)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Way)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Customer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Customer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Employee_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Employee_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sort.Sort_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sort.Sort_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Repair_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

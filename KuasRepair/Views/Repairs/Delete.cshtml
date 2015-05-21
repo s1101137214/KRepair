@@ -1,0 +1,96 @@
+﻿@model KuasRepair.Models.Repair
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Repair</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Cause)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Cause)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Object)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Object)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Finishdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Finishdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repair_Way)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repair_Way)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Customer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Customer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Employee_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Employee_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sort.Sort_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sort.Sort_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
