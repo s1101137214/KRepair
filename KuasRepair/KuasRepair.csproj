@@ -203,7 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\RepairDB.mdf" />
-    <Content Include="App_Data\RepairDB_log.ldf" />
+    <Content Include="App_Data\RepairDB_log.ldf">
+      <DependentUpon>RepairDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\TestDatabase1.mdf" />
     <Content Include="App_Data\TestDatabase1_log.ldf">
       <DependentUpon>TestDatabase1.mdf</DependentUpon>
