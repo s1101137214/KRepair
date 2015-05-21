@@ -11,20 +11,30 @@ namespace KuasRepair.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Repair
     {
+        [Display(Name = "ID")]
         public int Repair_ID { get; set; }
+        [Display(Name = "送修原因")]
         public string Repair_Cause { get; set; }
+        [Display(Name = "送修日期")]
         public System.DateTime Repair_Date { get; set; }
+        [Display(Name = "送修物件")]
         public string Repair_Object { get; set; }
+        [Display(Name = "完成日期")]
         public Nullable<System.DateTime> Repair_Finishdate { get; set; }
+        [Display(Name = "維修價格")]
         public Nullable<int> Repair_Price { get; set; }
+        [Display(Name = "維修方式")]
         public string Repair_Way { get; set; }
+        [Display(Name = "維修員工")]
         public int Employee_ID { get; set; }
         public int Sort_ID { get; set; }
+        [Display(Name = "客戶編號")]
         public int Customer_ID { get; set; }
-    
+
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Sort Sort { get; set; }

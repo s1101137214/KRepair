@@ -11,17 +11,19 @@ namespace KuasRepair.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Sort
     {
         public Sort()
         {
             this.Repair = new HashSet<Repair>();
         }
-    
+        [Display(Name = "ID")]
         public int Sort_ID { get; set; }
+        [Display(Name = "類型")]
         public string Sort_Name { get; set; }
-    
+
         public virtual ICollection<Repair> Repair { get; set; }
     }
 }

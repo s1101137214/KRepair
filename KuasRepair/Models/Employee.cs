@@ -11,20 +11,26 @@ namespace KuasRepair.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employee
     {
         public Employee()
         {
             this.Repair = new HashSet<Repair>();
         }
-    
+
+        [Display(Name = "ID")]
         public int Employee_ID { get; set; }
+        [Display(Name = "員工姓名")]
         public string Employee_Name { get; set; }
+        [Display(Name = "員工電話")]
         public string Employee_Phone { get; set; }
+        [Display(Name = "員工帳號")]
         public string Employee_Username { get; set; }
+        [Display(Name = "員工密碼")]
         public string Employee_Password { get; set; }
-    
+
         public virtual ICollection<Repair> Repair { get; set; }
     }
 }
