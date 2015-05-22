@@ -25,6 +25,8 @@ namespace KuasRepair.Models
         public string Customer_Name { get; set; }
         [Display(Name = "客戶電話")]
         public string Customer_Phone { get; set; }
+
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "客戶EMAIL")]
         public string Customer_Email { get; set; }
 

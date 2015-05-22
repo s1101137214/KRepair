@@ -28,6 +28,8 @@ namespace KuasRepair.Models
         public string Employee_Phone { get; set; }
         [Display(Name = "員工帳號")]
         public string Employee_Username { get; set; }
+
+        [DataType(DataType.Password)]
         [Display(Name = "員工密碼")]
         public string Employee_Password { get; set; }
 

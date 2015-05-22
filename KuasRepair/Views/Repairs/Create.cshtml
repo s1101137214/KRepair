@@ -1,5 +1,6 @@
 ﻿@model KuasRepair.Models.Repair
 
+
 @{
     ViewBag.Title = "Create";
 }
@@ -15,11 +16,12 @@
         <h4>Repair</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Repair_Cause, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Sort_ID, "類別", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Repair_Cause, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Repair_Cause, "", new { @class = "text-danger" })
+                @Html.DropDownList("Sort_ID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sort_ID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -36,6 +38,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Repair_Object, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Repair_Object, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Repair_Cause, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Repair_Cause, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Repair_Cause, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -64,23 +74,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Employee_ID, "Employee_ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Employee_ID, "維修員工", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Employee_ID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Employee_ID, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sort_ID, "Sort_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Sort_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Sort_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Customer_ID, "Customer_ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            
+            @Html.LabelFor(model => model.Customer_ID, "客戶姓名", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Customer_ID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Customer_ID, "", new { @class = "text-danger" })

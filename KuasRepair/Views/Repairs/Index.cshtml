@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<KuasRepair.Models.Repair>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Repair - Index";
 }
 
 <h2>Index</h2>
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Repair_ID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Repair_Cause)
+            @Html.DisplayNameFor(model => model.Sort.Sort_Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Repair_Date)
@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Repair_Object)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Repair_Cause)
+        </th>     
         <th>
             @Html.DisplayNameFor(model => model.Repair_Finishdate)
         </th>
@@ -38,9 +41,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Employee.Employee_Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sort.Sort_Name)
-        </th>
+      
         <th></th>
     </tr>
 
@@ -50,7 +51,7 @@
             @Html.DisplayFor(modelItem => item.Repair_ID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Repair_Cause)
+            @Html.DisplayFor(modelItem => item.Sort.Sort_Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Repair_Date)
@@ -58,6 +59,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Repair_Object)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Repair_Cause)
+        </td>   
         <td>
             @Html.DisplayFor(modelItem => item.Repair_Finishdate)
         </td>
@@ -73,9 +77,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Employee.Employee_Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sort.Sort_Name)
-        </td>
+       
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Repair_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.Repair_ID }) |

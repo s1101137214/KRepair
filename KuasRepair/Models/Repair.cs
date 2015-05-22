@@ -19,12 +19,20 @@ namespace KuasRepair.Models
         public int Repair_ID { get; set; }
         [Display(Name = "送修原因")]
         public string Repair_Cause { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "送修日期")]
         public System.DateTime Repair_Date { get; set; }
+
         [Display(Name = "送修物件")]
         public string Repair_Object { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "完成日期")]
         public Nullable<System.DateTime> Repair_Finishdate { get; set; }
+
         [Display(Name = "維修價格")]
         public Nullable<int> Repair_Price { get; set; }
         [Display(Name = "維修方式")]
