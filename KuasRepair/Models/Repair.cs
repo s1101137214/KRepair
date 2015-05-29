@@ -47,5 +47,6 @@ namespace KuasRepair.Models
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Sort Sort { get; set; }
+        public virtual List<Repair> Repairlist { get; set; }
     }
 }
