@@ -9,85 +9,93 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sort.Sort_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_Object)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_Cause)
-        </th>     
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_Finishdate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Repair_Way)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer.Customer_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee.Employee_Name)
-        </th>
-      
-        <th></th>
-    </tr>
+<div class="table-responsive">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sort.Sort_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_Object)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_Cause)
-        </td>   
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_Finishdate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repair_Way)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer.Customer_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.Employee_Name)
-        </td>
-       
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Repair_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Repair_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Repair_ID })
-        </td>
-    </tr>
-}
 
-</table>
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <table class="table  table-hover">
+        <tr>
+            <th class="text-primary">
+                
+                @Html.DisplayNameFor(model => model.Repair_ID)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Sort.Sort_Name)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Repair_Date)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Repair_Object)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Repair_Cause)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Repair_Finishdate)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Repair_Price)
+                </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Repair_Way)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Customer.Customer_Name)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Employee.Employee_Name)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sort.Sort_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_Object)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_Cause)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_Finishdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Repair_Way)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Customer_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.Employee_Name)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Repair_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Repair_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Repair_ID })
+                </td>
+            </tr>
+
+
+        }
+        </table>
+</div>   
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</button>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -101,6 +109,8 @@
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
             </div>
         </div>
+       
+      
     </div>
 </div>
 

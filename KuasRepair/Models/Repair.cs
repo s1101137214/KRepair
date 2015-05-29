@@ -39,6 +39,7 @@ namespace KuasRepair.Models
         public string Repair_Way { get; set; }
         [Display(Name = "維修員工")]
         public int Employee_ID { get; set; }
+        [Display(Name = "類別")]
         public int Sort_ID { get; set; }
         [Display(Name = "客戶編號")]
         public int Customer_ID { get; set; }
