@@ -4,54 +4,56 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>員工列表</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee_Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee_Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee_Password)
-        </th>
-        <th></th>
-    </tr>
+<div class="table-responsive">
+    <table class="table  table-hover">
+        <tr>
+            <th class="text-primary">
+                @Html.DisplayNameFor(model => model.Employee_ID)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Employee_Name)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Employee_Phone)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Employee_Username)
+            </th>
+            <th class="text-info">
+                @Html.DisplayNameFor(model => model.Employee_Password)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee_Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee_Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee_Password)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Employee_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Employee_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Employee_ID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Password)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Employee_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Employee_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Employee_ID })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>

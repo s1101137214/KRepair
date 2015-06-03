@@ -136,5 +136,29 @@ namespace KuasRepair.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult SearchIndex()
+        {
+            return View();
+        }
+
+        [HttpPost, ActionName("Search")]
+        public ActionResult Search(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Repair repair = db.Repair.Find(id);
+            if (repair == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Customer_ID = new SelectList(db.Customer, "Customer_ID", "Customer_Name", repair.Customer_ID);
+            ViewBag.Employee_ID = new SelectList(db.Employee, "Employee_ID", "Employee_Name", repair.Employee_ID);
+            ViewBag.Sort_ID = new SelectList(db.Sort, "Sort_ID", "Sort_Name", repair.Sort_ID);
+            return View(repair);
+        }
+
     }
 }

@@ -1,0 +1,14 @@
+﻿@model KuasRepair.Models.Repair
+
+@{
+    ViewBag.Title = "SearchIndex";
+}
+
+<h2>查詢送修紀錄</h2>
+
+@using (Html.BeginForm("Search", "Repairs"))
+{
+    <h4>送修單編號:</h4>
+    @Html.TextBox("id")
+    <input type="submit" value="Search" />
+}
