@@ -11,6 +11,12 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Repair_ID)
     <div class="form-group">
+        @Html.LabelFor(model => model.Repair_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Repair_ID, new { @readonly = true, @class = "form-control col-md-2" })
+        </div>
+    </div>
+    <div class="form-group">
         @Html.LabelFor(model => model.Sort_ID, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("Sort_ID", null, htmlAttributes: new { @class = "form-control" })

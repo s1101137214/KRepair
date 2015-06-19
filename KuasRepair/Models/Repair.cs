@@ -15,32 +15,41 @@ namespace KuasRepair.Models
 
     public partial class Repair
     {
+        [Required]
         [Display(Name = "ID")]
         public int Repair_ID { get; set; }
+        [Required]
         [Display(Name = "送修原因")]
         public string Repair_Cause { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "送修日期")]
         public System.DateTime Repair_Date { get; set; }
-
+        [Required]
         [Display(Name = "送修物件")]
         public string Repair_Object { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "完成日期")]
         public Nullable<System.DateTime> Repair_Finishdate { get; set; }
 
+        [Required]
         [Display(Name = "維修價格")]
         public Nullable<int> Repair_Price { get; set; }
+        [Required]
         [Display(Name = "維修方式")]
         public string Repair_Way { get; set; }
+        [Required]
         [Display(Name = "維修員工")]
         public int Employee_ID { get; set; }
+        [Required]
         [Display(Name = "類型")]
         public int Sort_ID { get; set; }
+        [Required]
         [Display(Name = "客戶")]
         public int Customer_ID { get; set; }
 

@@ -4,21 +4,29 @@
     ViewBag.Title = "SearchIndex";
 }
 
-<div class="row">
+<div class="row" style="text-align:start;margin:auto 0px">
     <div class="jumbotron">
         <h2><span class="glyphicon glyphicon-search"></span><strong>送修狀態查詢</strong></h2>
         <p class="lead">請輸入送修單號&連絡電話</p>
         <p>Please enter ID and phone number.</p>
-
         <p></p>
-        @using (Html.BeginForm("Search", "Repairs"))
-        {
-            <h3><strong>送修單編號:</strong></h3>
-            @Html.TextBox("id", null, new { @class = "form-control", @placeholder = "1,2,3..." })
-            <h3><strong>連絡電話:</strong></h3>
-            @Html.TextBox("phone", null, new { @class = "form-control", @placeholder = "0912123456..." })
-            <input type="submit" value="搜尋" class="btn btn-primary " />
-        }
+        <div style="">
+            @using (Html.BeginForm("Search", "Repairs"))
+            {
+                <span style="color:red">@ViewBag.test</span>
+                <h3><strong>送修單編號:</strong></h3>
+                @Html.TextBox("id", null, new { @class = "form-control", @placeholder = "1,2,3..." })
+                <h3><strong>連絡電話:</strong></h3>
+                @Html.TextBox("phone", null, new { @class = "form-control", @placeholder = "0912123456..." })
+                <input type="submit" value="搜尋" class="btn btn-primary " />
+
+            }
+            <p style="color:red">@ViewBag.error</p>
+        </div>
+        <div>
+
+        </div>
+
     </div>
 
 </div>

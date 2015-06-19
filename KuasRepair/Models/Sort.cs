@@ -19,8 +19,10 @@ namespace KuasRepair.Models
         {
             this.Repair = new HashSet<Repair>();
         }
+        [Required]
         [Display(Name = "ID")]
         public int Sort_ID { get; set; }
+        [Required]
         [Display(Name = "類型")]
         public string Sort_Name { get; set; }
 

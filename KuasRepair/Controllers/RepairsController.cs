@@ -143,22 +143,34 @@ namespace KuasRepair.Controllers
         }
 
         [HttpPost, ActionName("Search")]
-        public ActionResult Search(int? id)
+        public ActionResult Search(FormCollection form, int? id,string phone)
         {
             if (id == null)
-            {           
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            {
+                ViewBag.error = "查無此編號!";
+                return View("SearchIndex");
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Repair repair = db.Repair.Find(id);
-            if (repair == null)
+            
+           var customer = db.Customer.Where(x => x.Customer_Phone == form["phone"]); //find number
+            //ViewBag.phone = form["phone"];
+           if ((repair == null) || customer ==null)
             {
-                return View();
-               // return HttpNotFound();
+                ViewBag.error = "編號或號碼錯誤!!";
+                return View("SearchIndex");
+                // return HttpNotFound();
             }
-            ViewBag.Customer_ID = new SelectList(db.Customer, "Customer_ID", "Customer_Name", repair.Customer_ID);
-            ViewBag.Employee_ID = new SelectList(db.Employee, "Employee_ID", "Employee_Name", repair.Employee_ID);
-            ViewBag.Sort_ID = new SelectList(db.Sort, "Sort_ID", "Sort_Name", repair.Sort_ID);
-            return View(repair);
+            else
+            {
+                ViewBag.Customer_ID = new SelectList(db.Customer, "Customer_ID", "Customer_Name", repair.Customer_ID);
+                ViewBag.Employee_ID = new SelectList(db.Employee, "Employee_ID", "Employee_Name", repair.Employee_ID);
+                ViewBag.Sort_ID = new SelectList(db.Sort, "Sort_ID", "Sort_Name", repair.Sort_ID);
+                return View(repair);
+
+            }
+
+
         }
 
     }

@@ -19,16 +19,19 @@ namespace KuasRepair.Models
         {
             this.Repair = new HashSet<Repair>();
         }
-
+        [Required]
         [Display(Name = "ID")]
         public int Employee_ID { get; set; }
+        [Required]
         [Display(Name = "員工姓名")]
         public string Employee_Name { get; set; }
+        [Required]
         [Display(Name = "員工電話")]
         public string Employee_Phone { get; set; }
+        [Required]
         [Display(Name = "員工帳號")]
         public string Employee_Username { get; set; }
-
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "員工密碼")]
         public string Employee_Password { get; set; }
