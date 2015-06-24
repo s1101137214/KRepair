@@ -1,22 +1,47 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
-    @Html.AntiForgeryToken()
+        <div class="navbar-collapse collapse collapse-left">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+                <li>@Html.ActionLink("紀錄", "Index", "Repairs")</li>
+                <li>@Html.ActionLink("員工", "Index", "Employees")</li>
+                <li>@Html.ActionLink("顧客", "Index", "Customers")</li>
+                <li>@Html.ActionLink("搜尋紀錄", "SearchIndex", "Repairs")</li>
+            </ul>
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("你好 " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "管理" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">登出</a></li>
-    </ul>
+
+            @Html.AntiForgeryToken()
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    @Html.ActionLink("你好 " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "管理" })
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">登出</a></li>
+            </ul>
+        </div>
+
+
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("註冊", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("登入", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+            <li>@Html.ActionLink("搜尋紀錄", "SearchIndex", "Repairs")</li>
+            @* <li>@Html.ActionLink("紀錄", "Index", "Repairs")</li>
+                <li>@Html.ActionLink("員工", "Index", "Employees")</li>
+                <li>@Html.ActionLink("顧客", "Index", "Customers")</li>*@
+
+
+            <ul class="nav navbar-nav navbar-right">
+                @*
+                    <li>@Html.ActionLink("註冊", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                *@
+                <li>@Html.ActionLink("登入", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>
+    </div>
 }

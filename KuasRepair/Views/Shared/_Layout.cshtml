@@ -20,17 +20,8 @@
                 </button>
                 @Html.ActionLink("KRepair", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-                    <li>@Html.ActionLink("紀錄", "Index", "Repairs")</li>
-                    <li>@Html.ActionLink("員工", "Index", "Employees")</li>
-                    <li>@Html.ActionLink("顧客", "Index", "Customers")</li>
-                    <li>@Html.ActionLink("搜尋紀錄", "SearchIndex", "Repairs")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-                
-            </div>
+            @Html.Partial("_LoginPartial")
+           
         </div>
     </div>
     <div class="container body-content">
