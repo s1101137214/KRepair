@@ -12,9 +12,7 @@
                 <li>@Html.ActionLink("搜尋紀錄", "SearchIndex", "Repairs")</li>
             </ul>
 
-
             @Html.AntiForgeryToken()
-
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     @Html.ActionLink("你好 " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "管理" })
@@ -35,13 +33,12 @@ else
             @* <li>@Html.ActionLink("紀錄", "Index", "Repairs")</li>
                 <li>@Html.ActionLink("員工", "Index", "Employees")</li>
                 <li>@Html.ActionLink("顧客", "Index", "Customers")</li>*@
-
-
-            <ul class="nav navbar-nav navbar-right">
-                @*
-                    <li>@Html.ActionLink("註冊", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                *@
-                <li>@Html.ActionLink("登入", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-            </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            @*
+                <li>@Html.ActionLink("註冊", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            *@
+            <li>@Html.ActionLink("登入", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
     </div>
 }
